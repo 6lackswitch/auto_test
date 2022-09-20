@@ -9,7 +9,7 @@ class ProductPage(BasePage):
     def add_to_cart_success(self):
         success_text = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE)
         success = success_text.text
-        assert "The shellcoder's handbook" == success, "Error"
+        assert "Coders at Work" in success, "Error"
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
