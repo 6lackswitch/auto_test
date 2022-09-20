@@ -10,7 +10,6 @@ link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?prom
 class TestUserAddToBasketFromProductPage():
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
-        yield
         page = LoginPage(browser, link)
         page.open()
         page.go_to_login_page()
