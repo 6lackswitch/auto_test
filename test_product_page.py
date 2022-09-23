@@ -1,7 +1,7 @@
 from .pages.product_page import ProductPage
 from .pages.basket_page import BasketPage
 from .pages.login_page import LoginPage
-
+import time
 import pytest
 
 link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
@@ -13,9 +13,9 @@ class TestUserAddToBasketFromProductPage():
         page = LoginPage(browser, link)
         page.open()
         page.go_to_login_page()
-        email = ''
-        password = ''
-        page.register_new_user(email, password)
+        email_text = str(time.time()) + "@fakemail.org"
+        password = 'dfghfg34dgdfAA'
+        page.register_new_user(email_text, password)
         page.should_be_authorized_user()
 
     def test_user_cant_see_success_message(self, browser):

@@ -1,9 +1,7 @@
-from selenium.webdriver.common.by import By
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
 import pytest
-import time
 
 link = "http://selenium1py.pythonanywhere.com/en-gb/"
 
